@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  
+  /* Primary Brand: Deep Medical Blue */
+  --color-medical-dark: #090d16;
+  --color-medical-blue: #0f2557;
+  --color-medical-blue-light: #1e3a8a;
+  --color-medical-blue-hover: #172554;
+
+  /* Secondary Brand: Premium Teal */
+  --color-medical-teal: #0d9488;
+  --color-medical-teal-light: #0f766e;
+  --color-medical-teal-hover: #115e59;
+  --color-medical-teal-accent: #ccfbf1;
+
+  /* Neutrals & UI */
+  --card-background: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(226, 232, 240, 0.8);
+  
+  --font-sans: 'Outfit', 'Inter', var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@theme {
+  --color-med-dark: var(--color-medical-dark);
+  --color-med-blue: var(--color-medical-blue);
+  --color-med-blue-light: var(--color-medical-blue-light);
+  --color-med-teal: var(--color-medical-teal);
+  --color-med-teal-hover: var(--color-medical-teal-hover);
+  --color-med-teal-accent: var(--color-medical-teal-accent);
+  
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(13, 148, 136, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(13, 148, 136, 0.8);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Glassmorphism Helper */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+.dark-glass-card {
+  background: rgba(15, 37, 87, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
